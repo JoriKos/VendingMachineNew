@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Main {
 
@@ -36,12 +35,12 @@ public class Main {
         String[] antwoordenArray;
         antwoordenArray = new String[10];
         int run = 0;
-        int repeat = 0;
+        boolean repeat = false;
+        Scanner s = new Scanner(System.in);
 
-        while(run == 0) {
+        while (run == 0) {
 
             System.out.println("Wil je wat drinken?");
-            Scanner s = new Scanner(System.in);
 
             antwoord = s.nextLine();
             lc = antwoord.toLowerCase();
@@ -121,56 +120,37 @@ public class Main {
                         System.out.println("Je hebt niet genoeg geld");
                         G = G + 2;
                         System.out.println("Je hebt nog €" + G);
-                    } else if (kwct == 2) {
 
-                        System.out.println("Dat word dan €1");
-                        G = G - 1;
+                    }
+                } else if (kwct == 2) {
+                    System.out.println("Dat word dan €1");
+                    G = G - 1;
+                    System.out.println("Je hebt nog €" + G);
+                    if (G < 0) {
+                        System.out.println("Je hebt niet genoeg geld");
+                        G = G + 1;
                         System.out.println("Je hebt nog €" + G);
-                        if (G < 0) {
-                            System.out.println("Je hebt niet genoeg geld");
-                            G = G + 1;
-                            System.out.println("Je hebt nog €" + G);
-                        }
-                    } else if (kwct == 3) {
-                        System.out.println("Dat word dan €2");
-                        G = G - 2;
+                    }
+                } else if (kwct == 3) {
+                    System.out.println("Dat word dan €2");
+                    G = G - 2;
+                    System.out.println("Je hebt nog €" + G);
+                    if (G < 0) {
+                        System.out.println("Je hebt niet genoeg geld");
+                        G = G + 2;
                         System.out.println("Je hebt nog €" + G);
-                        if (G < 0) {
-                            System.out.println("Je hebt niet genoeg geld");
-                            G = G + 2;
-                            System.out.println("Je hebt nog €" + G);
-                        }
-                    } else if (kwct == 4) {
-                        System.out.println("Dat word dan €1");
-                        G = G - 1;
+                    }
+                } else if (kwct == 4) {
+                    System.out.println("Dat word dan €1");
+                    G = G - 1;
+                    System.out.println("Je hebt nog €" + G);
+                    if (G < 0) {
+                        System.out.println("Je hebt niet genoeg geld");
+                        G = G + 1;
                         System.out.println("Je hebt nog €" + G);
-                        if (G < 0) {
-                            System.out.println("Je hebt niet genoeg geld");
-                            G = G + 1;
-                            System.out.println("Je hebt nog €" + G);
-                        }
                     }
                 }
             }
-
-            System.out.println("Wil je nog iets anders? (Y/N)");
-            String rp = s.nextLine();
-            String lc1 = rp.toUpperCase();
-
-            if(lc1.equals("Y")){
-                repeat = 1;
-                run = 1;
-            }
-            else if(lc1.equals("N")){
-                System.out.println("Het programma sluit nu af");
-                repeat = 0;
-                System.exit(1);
-            }
-        }
-
-
-        if(repeat == 1){
-            run = 0;
         }
     }
 }

@@ -102,10 +102,13 @@ public class Main {
                         System.out.println("Je hebt nog €" + G);
                     }
                 }
+
                 System.out.println("Wil je nog iets anders?");
                 String rp = s.nextLine();
+                
                 if(rp.equals("ja")){
                     repeat = 1;
+                    run = false;
                 }
                 else if(rp.equals("nee")){
                     System.out.println("Het programma sluit nu af");
@@ -160,6 +163,9 @@ public class Main {
                     }
                 }
             }
+        }
+        if(repeat == 1){
+            run = true;
         }
     }
 }

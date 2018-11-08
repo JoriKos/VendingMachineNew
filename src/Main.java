@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int G = 30;
+        double G = 30;
         System.out.println(" __     __  ________  __    __  _______   ______  __    __   ______          \n" +
                 "/  |   /  |/        |/  \\  /  |/       \\ /      |/  \\  /  | /      \\         \n" +
                 "$$ |   $$ |$$$$$$$$/ $$  \\ $$ |$$$$$$$  |$$$$$$/ $$  \\ $$ |/$$$$$$  |        \n" +
@@ -35,117 +35,128 @@ public class Main {
         int wok = 0;
         String[] antwoordenArray;
         antwoordenArray = new String[10];
+        boolean run = true;
+        int repeat = 0;
 
+        while(run) {
+            System.out.println("Wil je wat drinken?");
+            Scanner s = new Scanner(System.in);
 
-        System.out.println("Wil je wat drinken?");
-        Scanner s = new Scanner(System.in);
-
-        antwoord = s.nextLine();
-        lc = antwoord.toLowerCase();
-
-        if (lc.equals("ja")){
-            System.out.println("Warm of koud");
-            wok = 1;
             antwoord = s.nextLine();
             lc = antwoord.toLowerCase();
-        }
-        else if (lc.equals("nee")){
-            System.out.println("Nu sluit het programma af");
-            System.exit(1);
-        }
-        else{
-            System.out.println("Vul een antwoord in (ja of nee)");
-        }
 
-
-        if (wok == 1){
-            if(lc.equals("warm")){
-                wok = 3;
+            if (lc.equals("ja")) {
+                System.out.println("Warm of koud");
+                wok = 1;
+                antwoord = s.nextLine();
+                lc = antwoord.toLowerCase();
+            } else if (lc.equals("nee")) {
+                System.out.println("Nu sluit het programma af");
+                System.exit(1);
+            } else {
+                System.out.println("Vul een antwoord in (ja of nee)");
             }
-            else if(lc.equals("koud")){
-                wok = 2;
-            }
-        }
 
 
-        else if (wok == 2){
-            System.out.println("Kies uit:\n" +
-                    "1. Cola\n" +
-                    "2. Pepsi\n" +
-                    "3. Fanta\n" +
-                    "4. Water");
-            int cpfw = s.nextInt();
-            System.out.println("Dat word dan €2");
-            G = G - 2;
-            if (G < 0){
-                System.out.println("Je hebt niet genoeg geld");
-                G = G + 2;
-            }
-            else if(cpfw == 2) {
+            if (lc.equals("koud")) {
+                System.out.println("Kies uit:\n" +
+                        "1. Cola €2\n" +
+                        "2. Pepsi €2\n" +
+                        "3. Fanta €1\n" +
+                        "4. Water €0.50");
+                int cpfw = s.nextInt();
+                if (cpfw == 1) {
 
-                System.out.println("Dat word dan €1");
-                G = G - 1;
-                if (G < 0) {
-                    System.out.println("Je hebt niet genoeg geld");
-                    G = G + 1;
-                }
-            }
-            else if(cpfw == 3){
-                System.out.println("Dat word dan €2");
-                G = G - 2;
-                if(G < 0){
-                    System.out.println("Je hebt niet genoeg geld");
-                    G = G + 2;
-                }
-            }
-            else if(cpfw == 4){
-                System.out.println("Dat word dan €1");
-                G = G - 1;
-                if(G < 0){
-                    System.out.println("Je hebt niet genoeg geld");
-                    G = G + 1;
-                }
-            }
-        }
-
-        else if (wok == 3){
-            System.out.println("Kies uit:\n" +
-                    "1. Koffie\n" +
-                    "2. Water\n" +
-                    "3. Chocolademelk\n" +
-                    "4. Thee\n");
-            System.out.println("Ik wil nummer: ");
-            int kwct = s.nextInt();
-            if(kwct == 1){
-                System.out.println("Dat word dan €2");
-                G = G - 2;
-                if (G < 0){
-                    System.out.println("Je hebt niet genoeg geld");
-                    G = G + 2;
-                }
-                else if(kwct == 2) {
-
-                    System.out.println("Dat word dan €1");
-                    G = G - 1;
-                    if (G < 0) {
-                        System.out.println("Je hebt niet genoeg geld");
-                        G = G + 1;
-                    }
-                }
-                else if(kwct == 3){
                     System.out.println("Dat word dan €2");
                     G = G - 2;
-                    if(G < 0){
+                    if (G < 0) {
                         System.out.println("Je hebt niet genoeg geld");
                         G = G + 2;
                     }
-                }
-                else if(kwct == 4){
+                } else if (cpfw == 2) {
+
+                    System.out.println("Dat word dan €2");
+                    G = G - 2;
+                    System.out.println("Je hebt nog €" + G);
+                    if (G < 0) {
+                        System.out.println("Je hebt niet genoeg geld");
+                        G = G + 2;
+                        System.out.println("Je hebt nog €" + G);
+                    }
+                } else if (cpfw == 3) {
                     System.out.println("Dat word dan €1");
                     G = G - 1;
-                    if(G < 0){
+                    System.out.println("Je hebt nog €" + G);
+                    if (G < 0) {
                         System.out.println("Je hebt niet genoeg geld");
                         G = G + 1;
+                        System.out.println("Je hebt nog €" + G);
+                    }
+                } else if (cpfw == 4) {
+                    System.out.println("Dat word dan €0.50");
+                    G = G - 0.5;
+                    System.out.println("Je hebt nog €" + G);
+                    if (G < 0) {
+                        System.out.println("Je hebt niet genoeg geld");
+                        G = G + 0.5;
+                        System.out.println("Je hebt nog €" + G);
+                    }
+                }
+                System.out.println("Wil je nog iets anders?");
+                String rp = s.nextLine();
+                if(rp.equals("ja")){
+                    repeat = 1;
+                }
+                else if(rp.equals("nee")){
+                    System.out.println("Het programma sluit nu af");
+                    System.exit(1);
+                }
+            }
+
+            if (lc.equals("warm")) {
+                System.out.println("Kies uit:\n" +
+                        "1. Koffie €2\n" +
+                        "2. Water €1\n" +
+                        "3. Chocolademelk €2\n" +
+                        "4. Thee €1\n");
+                System.out.println("Ik wil nummer: ");
+                int kwct = s.nextInt();
+                if (kwct == 1) {
+                    System.out.println("Dat word dan €2");
+                    G = G - 2;
+                    System.out.println("Je hebt nog €" + G);
+                    if (G < 0) {
+                        System.out.println("Je hebt niet genoeg geld");
+                        G = G + 2;
+                        System.out.println("Je hebt nog €" + G);
+                    } else if (kwct == 2) {
+
+                        System.out.println("Dat word dan €1");
+                        G = G - 1;
+                        System.out.println("Je hebt nog €" + G);
+                        if (G < 0) {
+                            System.out.println("Je hebt niet genoeg geld");
+                            G = G + 1;
+                            System.out.println("Je hebt nog €" + G);
+                        }
+                    } else if (kwct == 3) {
+                        System.out.println("Dat word dan €2");
+                        G = G - 2;
+                        System.out.println("Je hebt nog €" + G);
+                        if (G < 0) {
+                            System.out.println("Je hebt niet genoeg geld");
+                            G = G + 2;
+                            System.out.println("Je hebt nog €" + G);
+                        }
+                    } else if (kwct == 4) {
+                        System.out.println("Dat word dan €1");
+                        G = G - 1;
+                        System.out.println("Je hebt nog €" + G);
+                        if (G < 0) {
+                            System.out.println("Je hebt niet genoeg geld");
+                            G = G + 1;
+                            System.out.println("Je hebt nog €" + G);
+                        }
                     }
                 }
             }

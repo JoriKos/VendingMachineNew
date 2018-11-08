@@ -35,10 +35,11 @@ public class Main {
         int wok = 0;
         String[] antwoordenArray;
         antwoordenArray = new String[10];
-        boolean run = true;
+        int run = 0;
         int repeat = 0;
 
-        while(run) {
+        while(run == 0) {
+
             System.out.println("Wil je wat drinken?");
             Scanner s = new Scanner(System.in);
 
@@ -48,14 +49,15 @@ public class Main {
             if (lc.equals("ja")) {
                 System.out.println("Warm of koud");
                 wok = 1;
-                antwoord = s.nextLine();
-                lc = antwoord.toLowerCase();
             } else if (lc.equals("nee")) {
                 System.out.println("Nu sluit het programma af");
                 System.exit(1);
             } else {
                 System.out.println("Vul een antwoord in (ja of nee)");
             }
+
+            antwoord = s.nextLine();
+            lc = antwoord.toLowerCase();
 
 
             if (lc.equals("koud")) {
@@ -102,20 +104,7 @@ public class Main {
                         System.out.println("Je hebt nog €" + G);
                     }
                 }
-
-                System.out.println("Wil je nog iets anders?");
-                String rp = s.nextLine();
-                
-                if(rp.equals("ja")){
-                    repeat = 1;
-                    run = false;
-                }
-                else if(rp.equals("nee")){
-                    System.out.println("Het programma sluit nu af");
-                    System.exit(1);
-                }
             }
-
             if (lc.equals("warm")) {
                 System.out.println("Kies uit:\n" +
                         "1. Koffie €2\n" +
@@ -163,9 +152,25 @@ public class Main {
                     }
                 }
             }
+
+            System.out.println("Wil je nog iets anders? (Y/N)");
+            String rp = s.nextLine();
+            String lc1 = rp.toUpperCase();
+
+            if(lc1.equals("Y")){
+                repeat = 1;
+                run = 1;
+            }
+            else if(lc1.equals("N")){
+                System.out.println("Het programma sluit nu af");
+                repeat = 0;
+                System.exit(1);
+            }
         }
+
+
         if(repeat == 1){
-            run = true;
+            run = 0;
         }
     }
 }

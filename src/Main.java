@@ -37,7 +37,7 @@ public class Main {
         antwoordenArray = new String[10];
 
 
-        System.out.println("Wil je wat drinken??");
+        System.out.println("Wil je wat drinken?");
         Scanner s = new Scanner(System.in);
 
         antwoord = s.nextLine();

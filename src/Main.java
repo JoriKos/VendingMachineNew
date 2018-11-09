@@ -30,9 +30,9 @@ public class Main {
                 "                                                                             \n" +
                 "                                                                             ");
         String antwoord;
-        String lc;
+        String lc = "";
         String[] antwoordenArray;
-        antwoordenArray = new String[10];
+        antwoordenArray = new String[6];
         int run = 0;
         boolean repeat = false;
         Scanner s = new Scanner(System.in);
@@ -41,25 +41,32 @@ public class Main {
 
         while (run == 0) {
 
-            System.out.println("Wil je wat drinken? Typ 'exit' om het programma af te sluiten of 'saldo' om je geld te zien" );
+            boolean vraag = true;
 
-            antwoord = s.nextLine();
-            lc2 = antwoord.toLowerCase();
-
-            if (lc2.equals("ja")) {
-                System.out.println("Warm of koud");
-            } else if (lc2.equals("nee")) {
-                System.out.println("Nu sluit het programma af");
-                System.exit(1);
-            } else if (lc2.equals("exit")){
-                System.exit(1);
-            } else if (lc2.equals("saldo")){
-                System.out.println("Je hebt nog €" + G);
+            while (vraag) {
+                System.out.println("Wil je wat drinken? Typ 'exit' om het programma af te sluiten of 'saldo' om je geld te zien");
+                antwoord = s.nextLine();
+                lc2 = antwoord.toLowerCase();
+                if (lc2.equals("ja")) {
+                    System.out.println("Warm of koud");
+                    vraag = false;
+                } else if (lc2.equals("nee")) {
+                    System.out.println("Nu sluit het programma af");
+                    System.exit(1);
+                    vraag = false;
+                } else if (lc2.equals("exit")) {
+                    System.exit(1);
+                    vraag = false;
+                } else if (lc2.equals("saldo")) {
+                    System.out.println("Je hebt nog €" + G);
+                }
             }
+
+
+            boolean vraaag = true;
 
             antwoord1 = s.nextLine();
             lc = antwoord1.toLowerCase();
-
 
             if (lc.equals("koud")) {
                 System.out.println("Kies uit:\n" +
@@ -69,13 +76,14 @@ public class Main {
                         "4. Water €0.50");
                 int cpfw = s.nextInt();
                 if (cpfw == 1) {
-
                     System.out.println("Dat word dan €2");
                     G = G - 2;
                     if (G < 0) {
                         System.out.println("Je hebt niet genoeg geld");
                         G = G + 2;
+                        vraaag = false;
                     }
+                    vraaag = false;
                 } else if (cpfw == 2) {
 
                     System.out.println("Dat word dan €2");
@@ -85,7 +93,9 @@ public class Main {
                         System.out.println("Je hebt niet genoeg geld");
                         G = G + 2;
                         System.out.println("Je hebt nog €" + G);
+                        vraaag = false;
                     }
+                    vraaag = false;
                 } else if (cpfw == 3) {
                     System.out.println("Dat word dan €1");
                     G = G - 1;
@@ -94,7 +104,9 @@ public class Main {
                         System.out.println("Je hebt niet genoeg geld");
                         G = G + 1;
                         System.out.println("Je hebt nog €" + G);
+                        vraaag = false;
                     }
+                    vraaag = false;
                 } else if (cpfw == 4) {
                     System.out.println("Dat word dan €0.50");
                     G = G - 0.5;
@@ -103,7 +115,9 @@ public class Main {
                         System.out.println("Je hebt niet genoeg geld");
                         G = G + 0.5;
                         System.out.println("Je hebt nog €" + G);
+                        vraaag = false;
                     }
+                    vraaag = false;
                 }
             }
 

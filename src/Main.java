@@ -31,32 +31,34 @@ public class Main {
                 "                                                                             ");
         String antwoord;
         String lc;
-        int wok = 0;
         String[] antwoordenArray;
         antwoordenArray = new String[10];
         int run = 0;
         boolean repeat = false;
         Scanner s = new Scanner(System.in);
+        String lc2;
+        String antwoord1;
 
         while (run == 0) {
 
-            System.out.println("Wil je wat drinken?");
+            System.out.println("Wil je wat drinken? Typ 'exit' om het programma af te sluiten of 'saldo' om je geld te zien" );
 
             antwoord = s.nextLine();
-            lc = antwoord.toLowerCase();
+            lc2 = antwoord.toLowerCase();
 
-            if (lc.equals("ja")) {
+            if (lc2.equals("ja")) {
                 System.out.println("Warm of koud");
-                wok = 1;
-            } else if (lc.equals("nee")) {
+            } else if (lc2.equals("nee")) {
                 System.out.println("Nu sluit het programma af");
                 System.exit(1);
-            } else {
-                System.out.println("Vul een antwoord in (ja of nee)");
+            } else if (lc2.equals("exit")){
+                System.exit(1);
+            } else if (lc2.equals("saldo")){
+                System.out.println("Je hebt nog €" + G);
             }
 
-            antwoord = s.nextLine();
-            lc = antwoord.toLowerCase();
+            antwoord1 = s.nextLine();
+            lc = antwoord1.toLowerCase();
 
 
             if (lc.equals("koud")) {
@@ -104,6 +106,8 @@ public class Main {
                     }
                 }
             }
+
+
             if (lc.equals("warm")) {
                 System.out.println("Kies uit:\n" +
                         "1. Koffie €2\n" +
@@ -112,6 +116,7 @@ public class Main {
                         "4. Thee €1\n");
                 System.out.println("Ik wil nummer: ");
                 int kwct = s.nextInt();
+
                 if (kwct == 1) {
                     System.out.println("Dat word dan €2");
                     G = G - 2;
@@ -151,6 +156,7 @@ public class Main {
                     }
                 }
             }
+            run = 1;
         }
     }
 }

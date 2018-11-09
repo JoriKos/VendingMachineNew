@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        double G = 30;
+        double G = 5;
         System.out.println(" __     __  ________  __    __  _______   ______  __    __   ______          \n" +
                 "/  |   /  |/        |/  \\  /  |/       \\ /      |/  \\  /  | /      \\         \n" +
                 "$$ |   $$ |$$$$$$$$/ $$  \\ $$ |$$$$$$$  |$$$$$$/ $$  \\ $$ |/$$$$$$  |        \n" +
@@ -32,7 +32,19 @@ public class Main {
         String antwoord;
         String lc = "";
         String[] antwoordenArray;
+        String[] menu;
+        menu = new String[10];
         antwoordenArray = new String[6];
+        menu[0] = "Koude drankjes:";
+        menu[1] = "Cola";
+        menu[2] = "Pepsi";
+        menu[3] = "Fanta";
+        menu[4] = "Water";
+        menu[5] = "Warme drankjes:";
+        menu[6] = "Koffie";
+        menu[7] = "Water";
+        menu[8] = "Chocolademelk";
+        menu[9] = "Thee";
         int run = 0;
         boolean repeat = false;
         Scanner s = new Scanner(System.in);
@@ -44,7 +56,7 @@ public class Main {
             boolean vraag = true;
 
             while (vraag) {
-                System.out.println("Wil je wat drinken? Typ 'exit' om het programma af te sluiten of 'saldo' om je geld te zien");
+                System.out.println("Wil je wat drinken? Typ 'exit' om het programma af te sluiten, 'menu' om het hele menu te zien, 'saldo' om je geld te zien");
                 antwoord = s.nextLine();
                 lc2 = antwoord.toLowerCase();
                 if (lc2.equals("ja")) {
@@ -63,6 +75,10 @@ public class Main {
                 } else if (lc2.equals("saldo")) {
                     System.out.println("Je hebt nog €" + G);
                     antwoordenArray[1] = "saldo";
+                } else if (lc2.equals("menu")){
+                    System.out.println(menu[0] +"\n" + menu[1] + "\n" + menu[2] + "\n" + menu[3] + "\n" + menu[4] + "\n" + menu[5] + "\n" + menu[6] +
+                            "\n" + menu[7] + "\n" + menu[8] + "\n" + menu[9]);
+                    antwoordenArray[5] = "menu";
                 }
             }
 
@@ -390,7 +406,13 @@ public class Main {
                     }
                 }
             }
-            System.out.println("Jouw keuzes waren: " + antwoordenArray[0] + " " + antwoordenArray[3] + " " + antwoordenArray[2] + " " + antwoordenArray[1]);
+            if (antwoordenArray[1] == "saldo") {
+                System.out.println("Antwoorden die jij hebt gegeven: " + antwoordenArray[0] + " " + antwoordenArray[3] + " " + antwoordenArray[2] + " " + antwoordenArray[1]);
+            } else if (antwoordenArray[1] == "" && antwoordenArray[5] == ""){
+                System.out.println("Antwoorden die jij hebt gegeven: " + antwoordenArray[0] + " " + antwoordenArray[3] + " " + antwoordenArray[2]);
+            } else if (antwoordenArray[1] == "" && antwoordenArray[5] == "menu"){
+                System.out.println("Antwoorden die jij hebt gegeven: " + antwoordenArray[0] + " " + antwoordenArray[3] + " " + antwoordenArray[2] + " " + antwoordenArray[5]);
+            }
             run = 1;
         }
     }

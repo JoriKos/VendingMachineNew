@@ -22,14 +22,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2330" />
-          <entry key="txt" value="460" />
+          <entry key="java" value="2347" />
+          <entry key="txt" value="480" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2330" />
-          <entry key="PLAIN_TEXT" value="460" />
+          <entry key="JAVA" value="2347" />
+          <entry key="PLAIN_TEXT" value="480" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-741">
-              <caret line="189" column="65" selection-start-line="189" selection-start-column="65" selection-end-line="189" selection-end-column="65" />
+            <state relative-caret-position="-435">
+              <caret line="247" column="39" selection-start-line="247" selection-start-column="39" selection-end-line="247" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -87,7 +87,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541751921487" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541751971839" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -128,7 +128,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1541670650554</updated>
-      <workItem from="1541670653246" duration="10453000" />
+      <workItem from="1541670653246" duration="10695000" />
     </task>
     <task id="LOCAL-00001" summary="Created">
       <created>1541670679805</created>
@@ -207,11 +207,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541751156011</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added more ascii art">
+      <created>1541751929711</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1541751929711</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10453000" />
+    <option name="totallyTimeSpent" value="10695000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -265,13 +272,14 @@
     <MESSAGE value="It wont loop anymore, added &quot;saldo&quot; and &quot;exit&quot; commands" />
     <MESSAGE value="fixed some stuff" />
     <MESSAGE value="Added some ascii art and array system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some ascii art and array system" />
+    <MESSAGE value="added more ascii art" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more ascii art" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-741">
-          <caret line="189" column="65" selection-start-line="189" selection-start-column="65" selection-end-line="189" selection-end-column="65" />
+        <state relative-caret-position="-435">
+          <caret line="247" column="39" selection-start-line="247" selection-start-column="39" selection-end-line="247" selection-end-column="39" />
         </state>
       </provider>
     </entry>

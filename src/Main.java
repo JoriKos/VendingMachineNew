@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        double G = 5;
+        double G = 6;
         System.out.println(" __     __  ________  __    __  _______   ______  __    __   ______          \n" +
                 "/  |   /  |/        |/  \\  /  |/       \\ /      |/  \\  /  | /      \\         \n" +
                 "$$ |   $$ |$$$$$$$$/ $$  \\ $$ |$$$$$$$  |$$$$$$/ $$  \\ $$ |/$$$$$$  |        \n" +
@@ -30,7 +30,7 @@ public class Main {
                 "                                                                             \n" +
                 "                                                                             ");
         String antwoord;
-        String lc = "";
+        String lc;
         String[] antwoordenArray;
         String[] menu;
         menu = new String[10];
@@ -148,7 +148,7 @@ public class Main {
                             "  $$$$$$$$$$$$$$$$$$$$$\"   ?#$$W2#$$$$$$$Rt$$$$$$$$$$$$$$$$$$$$\n" +
                             "  $$$$$$$$$$$$$$$$$$$$$ NNUX  \"T*H?#$$$$R $$$$$$$$$$$$$$$$$$$$$\n" +
                             "  $$$$$$$$$$$$$$$$$$$$$X.#$NWX   ?  R$$$  $$$$$$$$$$$$$$$$$$$$$\n" +
-                            "  $$$$$$$$$$$$$$$$$$$$$NX ?R$$NWX   X$$R  $$$$$$$$$$$$$$$$$$$$$\n" +
+                                "  $$$$$$$$$$$$$$$$$$$$$NX ?R$$NWX   X$$R  $$$$$$$$$$$$$$$$$$$$$\n" +
                             "  $$$$$$$$$$$$$$$$$$$$$$$W. ?#R$$W?h$$$?  R$$$$$$$$$$$$$$$$$$$$\n" +
                             "  $$$$$$$$$$$$$$$$$$$$$R*R$WX  ???  R$$   X$$$$$$$$$$$$$$$$$$$$\n" +
                             "  $$$$$$$$$$$$$$$$$$$$$ N.?#$WX     9$$  X$$$$$$$$$$$$$$$$$$$$$\n" +
@@ -406,6 +406,7 @@ public class Main {
                     }
                 }
             }
+
             if (antwoordenArray[1] == "saldo") {
                 System.out.println("Antwoorden die jij hebt gegeven: " + antwoordenArray[0] + " " + antwoordenArray[3] + " " + antwoordenArray[2] + " " + antwoordenArray[1]);
             } else if (antwoordenArray[1] == "" && antwoordenArray[5] == ""){
@@ -413,7 +414,7 @@ public class Main {
             } else if (antwoordenArray[1] == "" && antwoordenArray[5] == "menu"){
                 System.out.println("Antwoorden die jij hebt gegeven: " + antwoordenArray[0] + " " + antwoordenArray[3] + " " + antwoordenArray[2] + " " + antwoordenArray[5]);
             }
-            run = 1;
+            
         }
     }
 }

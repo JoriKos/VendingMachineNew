@@ -29,29 +29,32 @@ public class Main {
                 "                                                                             \n" +
                 "                                                                             \n" +
                 "                                                                             ");
-        String antwoord;
-        String lc;
-        String[] antwoordenArray;
-        String[] menu;
-        menu = new String[10];
-        antwoordenArray = new String[6];
-        menu[0] = "Koude drankjes:";
-        menu[1] = "Cola";
-        menu[2] = "Pepsi";
-        menu[3] = "Fanta";
-        menu[4] = "Water";
-        menu[5] = "Warme drankjes:";
-        menu[6] = "Koffie";
-        menu[7] = "Water";
-        menu[8] = "Chocolademelk";
-        menu[9] = "Thee";
-        int run = 0;
-        boolean repeat = false;
-        Scanner s = new Scanner(System.in);
-        String lc2;
-        String antwoord1;
+int run = 0;
+boolean repeater = false;
 
         while (run == 0) {
+
+            repeater = false;
+            String antwoord;
+            String lc;
+            String[] antwoordenArray;
+            String[] menu;
+            menu = new String[10];
+            antwoordenArray = new String[6];
+            menu[0] = "Koude drankjes:";
+            menu[1] = "Cola";
+            menu[2] = "Pepsi";
+            menu[3] = "Fanta";
+            menu[4] = "Water";
+            menu[5] = "Warme drankjes:";
+            menu[6] = "Koffie";
+            menu[7] = "Water";
+            menu[8] = "Chocolademelk";
+            menu[9] = "Thee";
+            boolean repeat = false;
+            Scanner s = new Scanner(System.in);
+            String lc2;
+            String antwoord1;
 
             boolean vraag = true;
 
@@ -59,9 +62,11 @@ public class Main {
                 System.out.println("Wil je wat drinken? Typ 'exit' om het programma af te sluiten, 'menu' om het hele menu te zien, 'saldo' om je geld te zien");
                 antwoord = s.nextLine();
                 lc2 = antwoord.toLowerCase();
+
                 if (lc2.equals("ja")) {
                     System.out.println("Warm of koud");
                     antwoordenArray[0] = "ja";
+                    repeater = true;
                     vraag = false;
                 } else if (lc2.equals("nee")) {
                     System.out.println("Nu sluit het programma af");
@@ -95,7 +100,10 @@ public class Main {
                         "3. Fanta €1\n" +
                         "4. Water €0.50");
                 antwoordenArray[2] = "koud";
+                repeater = true;
+
                 int cpfw = s.nextInt();
+
                 if (cpfw == 1) {
                     System.out.println("Dat word dan €2");
                     G = G - 2;
@@ -294,6 +302,7 @@ public class Main {
                 System.out.println("Ik wil nummer: ");
                 int kwct = s.nextInt();
                 antwoordenArray[2] = "warm";
+                repeater = true;
 
                 if (kwct == 1) {
                     System.out.println("Dat word dan €2");
@@ -415,6 +424,9 @@ public class Main {
                 System.out.println("Antwoorden die jij hebt gegeven: " + antwoordenArray[0] + " " + antwoordenArray[3] + " " + antwoordenArray[2] + " " + antwoordenArray[5]);
             }
             
+        }
+        if (repeater){
+            run = 0;
         }
     }
 }
